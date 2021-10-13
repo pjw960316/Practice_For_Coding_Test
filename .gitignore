@@ -1,0 +1,12 @@
+*.vs
+Debug
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.swp
+test.cpp
+practice.cpp
+*.ini
+.editorconfig
+.x64
