@@ -21,22 +21,22 @@
 using ll = long long;
 using namespace std;
 
-int arr[501];
+int arr[1001];
 map<int,int> prime;
 void FindPrime()
 {    
-    for (int i = 2; i <= 250; i++)
+    for (int i = 2; i <= 500; i++)
     {
-        for (int j = 2; j <= 250; j++)
+        for (int j = 2; j <= 500; j++)
         {
-            if (i * j > 500)
+            if (i * j > 1000)
             {
                 break;
             }
             arr[i * j] = -1;
         }
     }
-    for (int i = 2; i <= 500; i++)
+    for (int i = 2; i <= 1000; i++)
     {
         if (arr[i] == 0)
         {
@@ -50,7 +50,7 @@ void Check(int n)
     vector<int> v;
     for (auto i : prime)
     {
-        if (i.first <= n / 2)
+        if (i.first <= n)
         {
             v.push_back(i.first);
         }
@@ -74,6 +74,7 @@ int main()
     cin.tie(NULL);
         
     FindPrime();
+
     int n;
     cin >> n;
     for (int i = 2; i <= n; i++)
@@ -88,7 +89,7 @@ int main()
         {
             return 0;
         }
-        cout << i.second+1 << " ";
+        cout << i.second << " ";
         
     }
     return 0;
