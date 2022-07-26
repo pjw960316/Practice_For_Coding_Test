@@ -9,11 +9,11 @@
 
 
 # 3. Programmers
-## **카카오 기출**을 연습할 수 있습니다.
+## **실제 코딩테스트와 비슷한 환경**을 연습할 수 있습니다.
 ![image](https://user-images.githubusercontent.com/55792986/137072009-b9c1f59c-482a-46ef-8658-9380db84aa52.png)
 
 
 
 # 4. Inflearn
-## 하나의 코스를 완료해보는 것도 좋을 것 같습니다.
+## 강의를 들으면서 연습할 수 있습니다.
 ![image](https://user-images.githubusercontent.com/55792986/161887028-cf4302a0-ae27-41e7-af34-75989320fd80.png)
