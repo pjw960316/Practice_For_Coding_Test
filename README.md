@@ -10,7 +10,7 @@
 
 # 3. Programmers
 ## **실제 코딩테스트와 비슷한 환경**을 연습할 수 있습니다.
-![image](https://user-images.githubusercontent.com/55792986/180945451-61efac59-27aa-4216-bf47-4b7d28f831f6.png)
+![image](https://user-images.githubusercontent.com/55792986/180945539-57bc556b-297e-4a9d-9ef8-90dfa5cc41d8.png)
 
 
 # 4. Inflearn
