@@ -10,3 +10,4 @@ practice.cpp
 *.ini
 .editorconfig
 .x64
+*.exe
