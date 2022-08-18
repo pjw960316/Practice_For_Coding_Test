@@ -1,3 +1,9 @@
+# 목차
+- [목차](#목차)
+- [문자열 구분하기](#문자열-구분하기)
+- 
+
+
 # 문자열 구분하기
 - ![image](https://user-images.githubusercontent.com/55792986/181409938-38251069-1d93-4f6b-83f2-8d2e2ce63d8f.png)
 - 참 여럽다... C++에서의 문자열은
@@ -27,5 +33,24 @@
   - 비교하는 타입이 달라서 에러가 난다.
 - ![image](https://user-images.githubusercontent.com/55792986/181713297-fe081fe4-282e-42ff-99b9-cf14ae6fae54.png)
   - 이렇게 하면 된다.
+
+# Associative Container의 Erase
+- **Set, Map의 erase는 iterator와 key를 이용하여 모두 지울 수 있다.**
+- key의 경우 값이므로 해당 값을 erase의 인자로 넣어 지운다.
+~~~
+int cnt = 0;
+    for(auto i = s.begin(); i != s.end(); i++)
+    {
+        cnt++;
+        auto tmp = i++; //아래에서 iterator i를 지워버리므로 segment fault가 일어난다. 그러므로 주소를 임시저장 한다.
+        if(cnt == 3)
+        {
+            s.erase(i);
+        }
+        i = tmp;
+    }
+~~~
+- iterator 순회를 이용해서 제거한다.
+- **iterator는 주소이므로 지워버리면 해당 메모리가 해제 된다. 그러므로 반복문에서 널 포인터에 i++를 하므로 에러가 난다. 반드시 i에 다른 iterator 값을 저장해준다.**
 
 
