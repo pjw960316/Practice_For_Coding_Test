@@ -9,9 +9,6 @@
 - [Associative Container의 역순 순회](#associative-container의-역순-순회)
     - [1. Library](#1-library)
     - [2. Associative Container의 Iterator 분석](#2-associative-container의-iterator-분석)
-- [DFS](#dfs)
-    - [1. 이전 학습 필기에 대한 고찰](#1-이전-학습-필기에-대한-고찰)
-    - [2. 현 실력에 대한 인식](#2-현-실력에-대한-인식)
 
 
 # 문자열 구분하기
@@ -177,13 +174,6 @@ map<int,int> m;
   - 4번 5번의 결과를 보면 begin에서 감소시키고, end에서 증가시키면 신기하게 다시 map의 iterator들을 참고하지만 이는 무시하자.
   - **우리가 기억해야 할 것은 map의 begin은 map에서 실제로 이용되는 값의 주소를 가리키므로 연속적인 주소의 첫 주소다. 하지만 map의 end는 map에서 실제로 이용되는 값의 주소가 아니라 map이 특이하게 저장하는 end flag의 주소다. 그러나 map의 실제마지막 값의 주소에서 iterator를 증가시키면 map의 end flag의 주소로 이동한다!**
 
-# DFS
-### 1. 이전 학습 필기에 대한 고찰
-- [이전 학습](https://github.com/pjw960316/Unity_Client_Programmer/blob/main/Computer%20Science/Study%20In%20College/Algorithm%20(Coding%20Test).pdf)
-- 3가지 조건 : 재귀함수, visit 배열, 
 
-### 2. 현 실력에 대한 인식
-- 대부분의 문제를 BFS로 풀다보니 DFS로 문제를 해결한 경험이 적다.
-  - 막상 마주치면 대충 풀고 넘어가거나 대놓고 DFS여서 해결했다.
-  - 조금만 DFS로 해결하는 것을 문제에서 숨긴다면 절대 풀지 못한다.
 - 
+

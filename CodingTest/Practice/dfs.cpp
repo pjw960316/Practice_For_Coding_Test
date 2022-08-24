@@ -24,20 +24,16 @@ using namespace std;
 int arr[6];
 void Dfs(int depth)
 {
-    if(depth == 0)
+    if(depth == 4) //max depth가 3일 때
     {
-        Dfs(1);
-    }
-    if(depth == 6)
-    {
-        for(int i=1; i<= 5; i++)
+        for(int i=1; i<= 3; i++)
         {
             cout << arr[i] << " ";
         }
         cout <<"\n";
         return;
     }
-    for(int i=1; i<=5; i++)
+    for(int i=1; i<=3; i++)
     {
         for(int j=0; j<depth; j++)
         {
@@ -55,7 +51,7 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    Dfs(0);
+    Dfs(1);
 
    return 0;
 }
