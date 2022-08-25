@@ -1,47 +1,45 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
-#include <algorithm>
-#include <utility>
-#include <cmath>
-#include <ctime>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <vector>
-#include <list>
-#include <deque>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <stack>
-#include <queue>
 
 using ll = long long;
 using namespace std;
 
-int arr[6];
+string coffee[4] = {"americano", "latte", "mocha", "water"};
+string arr[5]; //2번 조건 : index가 depth인 배열
+
+//1번 조건 : 재귀 함수
 void Dfs(int depth)
 {
-    if(depth == 4) //max depth가 3일 때
+    // Depth가 오버되면 종료한다.
+    if(depth == 5)
     {
-        for(int i=1; i<= 3; i++)
+        for(int i=1; i<=4; i++)
         {
             cout << arr[i] << " ";
         }
-        cout <<"\n";
+        cout << "\n";
         return;
     }
-    for(int i=1; i<=3; i++)
+
+    // 현재 Depth에 원소를 넣을 때, 이전에 사용한 원소가 있는지 검사한다.
+    // 이 때 visit 배열을 따로 만들 게 아니라 이미 넣고 있던 배열을 검사하면 된다.
+    // Depth는 언제나 1부터 채워 나가고, 0번 depth가 root로 가상으로 존재한다고 가정한다.
+    for(int i=0; i<4; i++)
     {
-        for(int j=0; j<depth; j++)
+        bool is_visit = false;
+        for(int j=0; j<depth; j++) //이전 depth에서 해당 커피를 마셨는지 검사한다.
         {
-            if(arr[j] != i)
+            if(arr[j] == coffee[i])
             {
-                arr[depth] = i;
-                Dfs(depth+1);
+                is_visit = true;
+                break;
             }
+        }
+        if(is_visit == false)
+        {
+            arr[depth] = coffee[i];
+            Dfs(depth+1);
         }
     }
 
