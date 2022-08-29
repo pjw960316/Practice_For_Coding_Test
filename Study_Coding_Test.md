@@ -9,6 +9,8 @@
 - [Associative Container의 역순 순회](#associative-container의-역순-순회)
     - [1. Library](#1-library)
     - [2. Associative Container의 Iterator 분석](#2-associative-container의-iterator-분석)
+- [clear](#clear)
+- [Vector를 인자로 넘길 때](#vector를-인자로-넘길-때)
 
 
 # 문자열 구분하기
@@ -174,6 +176,57 @@ map<int,int> m;
   - 4번 5번의 결과를 보면 begin에서 감소시키고, end에서 증가시키면 신기하게 다시 map의 iterator들을 참고하지만 이는 무시하자.
   - **우리가 기억해야 할 것은 map의 begin은 map에서 실제로 이용되는 값의 주소를 가리키므로 연속적인 주소의 첫 주소다. 하지만 map의 end는 map에서 실제로 이용되는 값의 주소가 아니라 map이 특이하게 저장하는 end flag의 주소다. 그러나 map의 실제마지막 값의 주소에서 iterator를 증가시키면 map의 end flag의 주소로 이동한다!**
 
+# clear
+- 자료구조에 저장된 값 들을 0으로 만드는 것이 아니라 자료구조의 모든 원소를 제거하는 메서드.
 
-- 
+# Vector를 인자로 넘길 때
+~~~c++
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+
+using ll = long long;
+using namespace std;
+
+int callByValue(vector<int> v)
+{
+    printf("cbv : %p\n" ,v); //0061FF00 (다름)
+    v[3] = 77;
+}
+
+int callByRefer(vector<int> &v)
+{
+    printf("cbr : %p\n" ,v); // 0061FEF0
+    v[2] = 88;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    vector<int> v;
+    for(int i=0; i<5; i++)
+    {
+        v.push_back(i*10);
+    }
+
+    printf("local : %p\n" ,v); //0061FEF0
+
+    callByValue(v);
+    callByRefer(v);
+
+    for(auto i : v)
+    {
+        cout << i << " "; //0 10 88 30 40
+    }
+   return 0;
+}
+~~~
+- callByValue는 vector의 값을 **복사해서** 전달하기 때문에 새로운 벡터가 생성되는 것과 같다.
+- callByRefer는 vector의 주소를 전달하기 때문에 main에서 선언한 vector와 동일하다. 
+  - 매개변수에서 주소 값을 받아야 한다.
+- 알고리즘의 경우 전역변수를 이용하면 참조할 대상을 전역에 놓기 때문에 매개변수가 필요 없어서 지금까지 전역변수로 이용했다. 하지만 지역변수로 전달해야 하는 문제도 종종 있었기에 한 번 정리했다.
+  - call-by-value는 복사하기 때문에 오버헤드가 클 것으로 예상된다.
+  - call-by-reference도 언제나 포인터 만큼의 매개변수 메모리를 할당하긴 한다.
 
