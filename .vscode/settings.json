@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "xtree": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }
