@@ -4,6 +4,7 @@
         "map": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "set": "cpp"
     }
 }
