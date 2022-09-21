@@ -12,6 +12,7 @@
     - [2. Associative Container의 Iterator 분석](#2-associative-container의-iterator-분석)
 - [clear](#clear)
 - [Vector를 인자로 넘길 때](#vector를-인자로-넘길-때)
+- [include <bits/stdc++.h>는 뭘까?](#include-bitsstdch는-뭘까)
 
 
 # 문자열 구분하기
@@ -311,3 +312,5 @@ int main()
   - call-by-value는 복사하기 때문에 오버헤드가 클 것으로 예상된다.
   - call-by-reference도 언제나 포인터 만큼의 매개변수 메모리를 할당하긴 한다.
 
+# include <bits/stdc++.h>는 뭘까?
+- ![image](https://user-images.githubusercontent.com/55792986/191496243-7f3100b1-edda-475c-b7b1-cbcf1afc74fb.png)
