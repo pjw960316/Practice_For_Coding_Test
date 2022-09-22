@@ -3,6 +3,8 @@
 - [개요](#개요)
 - [문자열 슬라이싱](#문자열-슬라이싱)
 - [문자열 <-> 숫자](#문자열---숫자)
+- [문자열 구분하기](#문자열-구분하기)
+- [push_back()](#push_back)
 
 # 개요
 - 문자열 다루는 것은 어렵지만 현업에서 가장 중요하다.
@@ -27,3 +29,10 @@ int main()
 # 문자열 <-> 숫자
 - ![image](https://user-images.githubusercontent.com/55792986/191493039-909485d0-9142-447f-b5e1-aa8757d8ffee.png)
 - 숫자를 문자열로 바꾸는 것은 to_string(숫자)
+
+# 문자열 구분하기
+- ![image](https://user-images.githubusercontent.com/55792986/181409938-38251069-1d93-4f6b-83f2-8d2e2ce63d8f.png)
+- 참 여럽다... C++에서의 문자열은
+
+# push_back()
+- push_back(인자)에서 인자는 char형만 가능하다.
