@@ -3,8 +3,8 @@
 - [개요](#개요)
 - [문자열 슬라이싱](#문자열-슬라이싱)
 - [문자열 <-> 숫자](#문자열---숫자)
-- [문자열 구분하기](#문자열-구분하기)
-- [push_back()](#push_back)
+- [특정 문자로 문자열 구분하기](#특정-문자로-문자열-구분하기)
+- [push_back(인자)](#push_back인자)
 
 # 개요
 - 문자열 다루는 것은 어렵지만 현업에서 가장 중요하다.
@@ -30,9 +30,55 @@ int main()
 - ![image](https://user-images.githubusercontent.com/55792986/191493039-909485d0-9142-447f-b5e1-aa8757d8ffee.png)
 - 숫자를 문자열로 바꾸는 것은 to_string(숫자)
 
-# 문자열 구분하기
-- ![image](https://user-images.githubusercontent.com/55792986/181409938-38251069-1d93-4f6b-83f2-8d2e2ce63d8f.png)
-- 참 여럽다... C++에서의 문자열은
+# 특정 문자로 문자열 구분하기
+- 많은 라이브러리가 있지만 경험상 까먹을 확률이 매우 높다.
+- 안전하게 벡터를 이용해서 구분하자.
+~~~c++
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-# push_back()
+    string str = "Hello My name is John";
+    vector<string> v;
+    string tmp = "";
+
+    //공백을 찾아서 구분하고 vector에 저장한다.
+    for(auto i : str)
+    {
+        if(i == ' ') //이걸 커스텀 하면 다양한 문자로 구분 할 수 있게 된다.
+        {
+            v.push_back(tmp);
+            tmp = "";
+        }
+        else
+        {
+            tmp.push_back(i);
+        }
+    }
+
+    //마지막에 저장하지 않은 문자열까지 챙겨준다.
+    if(tmp.length() != 0)
+    {
+        v.push_back(tmp);
+    }
+
+    for(auto i : v)
+    {
+        cout << i << "\n";
+    }
+    /*
+    Hello
+    My
+    name
+    is  
+    John
+    */
+
+   return 0;
+}
+~~~
+
+# push_back(인자)
 - push_back(인자)에서 인자는 char형만 가능하다.
+
