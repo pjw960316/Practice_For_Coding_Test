@@ -9,6 +9,9 @@
 - [clear](#clear)
 - [Vector를 인자로 넘길 때](#vector를-인자로-넘길-때)
 - [include <bits/stdc++.h>는 뭘까?](#include-bitsstdch는-뭘까)
+- [증감 연산자](#증감-연산자)
+    - [1. 전위연산, 후위연산](#1-전위연산-후위연산)
+    - [2. char에서의 증감](#2-char에서의-증감)
 
 # 개요
 - 독립적으로 문서를 만들기 어려운 내용은 이 곳에 정리한다.
@@ -105,3 +108,30 @@ int main()
 
 # include <bits/stdc++.h>는 뭘까?
 - ![image](https://user-images.githubusercontent.com/55792986/191496243-7f3100b1-edda-475c-b7b1-cbcf1afc74fb.png)
+
+# 증감 연산자
+### 1. 전위연산, 후위연산
+- 일단 두 개념은 헷갈리기 때문에 쓰지 않는 것이 좋다고 생각한다.
+- ![image](https://user-images.githubusercontent.com/55792986/191745888-3b3920e8-2c74-4c2a-9aba-9139914d0e89.png)
+~~~c++
+int i=10 , j=10;
+cout << ++i << "\n"; // 11
+cout << j++ << "\n"; // 10 
+~~~
+
+### 2. char에서의 증감
+~~~c++
+char alphabet = 'a';
+cout << ++alphabet << "\n"; //'b'
+
+alphabet = 'a';
+cout << alphabet + 0x01 << "\n"; //98
+printf("%c" , alphabet + 0x01); //'b'
+printf("%c" , alphabet + 1); //'b'
+~~~
+  - **증감연산자와 함께 쓰면 간단하게 증감을 나타낼 수 있다.**
+  - ASCII는 8비트의 char 값을 문자로 나타내는 것 이다.
+  - 'a'의 아스키 값은 0x61 (십진수로 97)이다. 여기에 0x01을 더하면 0x62 (십진수로 98)이 된다.
+    - cout으로 ASCII를 출력시키면 그것의 십진수를 출력한다.
+
+
