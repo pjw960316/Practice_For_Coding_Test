@@ -1,0 +1,66 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <utility>
+#include <cmath>
+#include <ctime>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <vector>
+#include <list>
+#include <deque>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <stack>
+#include <queue>
+
+using ll = long long;
+using namespace std;
+
+set<int> sset;
+int alternate(string s) 
+{    
+    int ans = 0;
+    for(auto i : s)
+    {
+        sset.insert(i);
+    }
+    
+    //time_complexity = 600 * 2000
+    for(auto i : sset)
+    {
+        for(auto j : sset)
+        {
+            string str = "";
+            if(i != j)
+            {
+                for(auto alpha : s)
+                {
+                    if(alpha == i || alpha == j)
+                    {
+                        str.push_back(alpha);
+                    }
+                }
+                bool can_ans = true;
+                for(int i=0; i<str.size()-1; i++)
+                {
+                    if(str[i] == str[i+1])
+                    {
+                        can_ans = false;
+                        break;                        
+                    }
+                }
+                if(can_ans == true)
+                {
+                    ans = max(ans , (int)str.size());
+                }   
+            }
+        }
+    }
+    return ans;
+}
+

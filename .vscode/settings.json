@@ -9,6 +9,9 @@
         "cstring": "cpp",
         "xiosbase": "cpp",
         "xstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "super digits": "cpp",
+        "algorithm": "cpp",
+        "two characters": "cpp"
     }
 }

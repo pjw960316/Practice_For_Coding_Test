@@ -6,10 +6,10 @@ using namespace std;
 
 int main()
 {
-    string str = "12345";
-    string tmp = str.substr(3,1);
+    string sstr = "abcde";
+    sstr.insert(3, "ffff"); // index 3에 문자열을 추가한다.
+    cout << sstr << "\n";  
 
-    string str2 = "aaa";
-    str2.push_back('b');
-    cout << tmp; //45를 출력하고 이는 문자다.    
+    sstr.erase(4,1); // 1개를 지운다.
+    cout << sstr << "\n";
 }

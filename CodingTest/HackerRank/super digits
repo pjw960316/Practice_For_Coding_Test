@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <utility>
+#include <cmath>
+#include <ctime>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <vector>
+#include <list>
+#include <deque>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <stack>
+#include <queue>
+
+using ll = long long;
+using namespace std;
+
+int superDigit(string n, int k) 
+{
+    long long sum = 0;
+    for(auto i : n)
+    {
+        sum += (i - '0');        
+    }
+    
+    sum *= k;
+    string str = to_string(sum);
+    
+    while(str.length() != 1)
+    {
+        int sum = 0;
+        for(auto i : str)
+        {
+            sum += (i - '0');
+        }
+        str = to_string(sum);
+    }
+    return str[0] - '0';
+}
