@@ -134,11 +134,7 @@ printf("%c" , alphabet + 1); //'b'
   - ASCII는 8비트의 char 값을 문자로 나타내는 것 이다.
   - 'a'의 아스키 값은 0x61 (십진수로 97)이다. 여기에 0x01을 더하면 0x62 (십진수로 98)이 된다.
     - cout으로 ASCII를 출력시키면 그것의 십진수를 출력한다.
-<<<<<<< Updated upstream
 
-# Windows의 EOF (End Of File)
-- Ctrl + Z를 눌러서 직접 입력해준다.
-=======
 ~~~c++
 char alphabet = 'A';
 alphabet += 0x20;
@@ -147,4 +143,9 @@ cout << alphabet; //A
   - 느낌상 소문자의 아스키 코드가 대문자의 아스키 코드 보다 작을 것이라 예상했다.
   - 하지만 대문자의 아스키 코드가 소문자의 아스키 코드보다 작다.
   - 소문자 <-> 대문자는 대문자에 0x20을 더하면 된다.
->>>>>>> Stashed changes
+  
+# Windows의 EOF (End Of File)
+- Ctrl + Z를 눌러서 직접 입력해준다.
+
+
+
