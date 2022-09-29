@@ -106,6 +106,7 @@ int main()
 - 알고리즘의 경우 전역변수를 이용하면 참조할 대상을 전역에 놓기 때문에 매개변수가 필요 없어서 지금까지 전역변수로 이용했다. 하지만 지역변수로 전달해야 하는 문제도 종종 있었기에 한 번 정리했다.
   - call-by-value는 복사하기 때문에 오버헤드가 클 것으로 예상된다.
   - call-by-reference도 언제나 포인터 만큼의 매개변수 메모리를 할당하긴 한다.
+- 재귀함수도 동일하게 받아온 주소를 인자로 넘겨주면 된다.
 
 # include <bits/stdc++.h>는 뭘까?
 - ![image](https://user-images.githubusercontent.com/55792986/191496243-7f3100b1-edda-475c-b7b1-cbcf1afc74fb.png)
