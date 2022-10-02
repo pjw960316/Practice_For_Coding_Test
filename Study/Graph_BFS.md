@@ -25,8 +25,8 @@
 - 좌표를 나타낼 때 코드가 복잡해지므로 캐싱을 하여 가독성을 높인다.
 ~~~c++
 int cur_r=0, cur_c=0;
-cur_r = q.front().r + path[i].first;
-cur_c = q.front().c + path[i].second;
+cur_r = q.front().first + path[i].first;
+cur_c = q.front().second + path[i].second;
 
 if(arr[cur_r][cur_c] == 0)
 {
@@ -36,7 +36,7 @@ if(arr[cur_r][cur_c] == 0)
 
 # 실수하는 것 들
 ### 1. pop의 타이밍
-- queue의 원소에 대해서 4방향, 8방향을 수행하고 queue의 front원소를 pop 해준다.
+- **queue의 원소에 대해서 4방향, 8방향을 수행하고 queue의 front원소를 pop 해준다.**
 - 간혹 4방향을 검사할 때 마다 pop을 해서 queue 관련 에러가 발생한다.
 ### 2. queue의 front()
 - queue의 front()는 결국 현재 queue의 첫 번째 값을 나타내기 때문에 올바른 시점에서 front() 값을 참고하는지 확인한다.

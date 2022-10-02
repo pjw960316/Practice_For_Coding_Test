@@ -22,7 +22,7 @@
 ### 1. DFS에서 필요한 조건을 3가지 -> **2가지**로 변경한다.
 - 이전 필기에서 필요한 3가지 조건을 '재귀함수, visit 배열, index가 depth인 배열'로 필기했다.
 - BFS에서는 visit 배열이 필요하다. 하지만 **DFS의 경우 visit 배열이 index가 depth인 배열과 결국 동일하다!**
-- 그러므로 **'재귀함수, index=depth인 배열'** 이 2가지만 필요하다.
+- 그러므로 **'재귀함수, index 가 depth인 배열'** 이 2가지만 필요하다.
 
 ### 2. DFS에서 'Depth 0 vs Depth 1'에 대해 명확히 정리한다.
 - **가상의 루트 노드를 Depth 0로 이용한다.**
@@ -50,7 +50,7 @@
   - 재귀함수의 일부분을 발췌했다.
   - 조건문은 무시한다. 
   - 이번 depth에서 해당 조건을 만족했기 때문에 채택되었고, 방문 했으니 visit[depth] = i를 수행한다.
-  - 그리고 바로 Dfs(pirodo , depth + 1 , dungeons);를 통해 다음 depth를 수행한다.
+  - 그리고 바로 'Dfs(pirodo - dungeons[i][1] , depth+1 , dungeons)' 를 통해 다음 depth를 수행한다.
     - visit[depth] 배열들은 올바르게 유지된다.
 # DFS 예제
 ~~~c++
