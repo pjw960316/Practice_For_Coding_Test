@@ -13,6 +13,7 @@
         "super digits": "cpp",
         "algorithm": "cpp",
         "two characters": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cmath": "cpp"
     }
 }
