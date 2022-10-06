@@ -7,6 +7,7 @@
 - [Set 과 Vector에 구조체를 넣어보자](#set-과-vector에-구조체를-넣어보자)
     - [1. 문제 코드 : set에 구조체를 넣는 경우](#1-문제-코드--set에-구조체를-넣는-경우)
     - [2. 해결 방법](#2-해결-방법)
+- [Deque](#deque)
 
 
 # Priority Queue
@@ -126,3 +127,8 @@ int main()
   - operator를 추가하는 것은 절대 코딩테스트에서 기억하지 못한다.
   - 그러므로 Vector를 이용한다.
   - Vector를 이용해서 해결하는 방식이 복잡도가 오버되면 다른 알고리즘으로 구현한다. 
+
+
+# Deque
+- [Reference](https://blockdmask.tistory.com/73)
+- queue나 stack은 순회가 불가능 하기 때문에 순회가 필요한 경우 Deque으로 대체해서 푼다.
