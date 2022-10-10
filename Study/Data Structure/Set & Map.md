@@ -8,7 +8,9 @@
 - [Unordered Map(Hash)의 Find](#unordered-maphash의-find)
     - [1. 복잡도는 상수 시간이다.](#1-복잡도는-상수-시간이다)
     - [2. key로 직접 찾으면 아래의 위험성이 발생하니 find를 사용하자.](#2-key로-직접-찾으면-아래의-위험성이-발생하니-find를-사용하자)
-- [map에 원소 추가 방식](#map에-원소-추가-방식)
+- [operator[]로 map에 원소를 추가한다.](#operator로-map에-원소를-추가한다)
+    - [1. 기존 생각](#1-기존-생각)
+    - [2. Official](#2-official)
 
 # Associative Container의 역순 순회
 ### 1. Library
@@ -292,22 +294,54 @@ int main()
   - 그래서 위의 예제를 보면 m["ddd"]를 출력할 때 자동으로 원소를 추가시켜 4개의 원소가 m에 저장된다.
 - 가장 안전한 것은 **find를 사용**하는 것 이라고 생각한다. 
 
-# map에 원소 추가 방식
+# operator[]로 map에 원소를 추가한다.
 ~~~c++
  map<string,int> m;
     
-    //원소 추가 방식_1
+    //원소 추가 방식_1 : insert
     m.insert({"jiwon" , 111});
 
-    //원소 추가 방식_2
+    //원소 추가 방식_2 : operator []
     m["jitwo"] = 222;
 
     cout << m["jiwon"] << " " << m["jitwo"] << " " <<m["jithree"]; 
     // 111 222 0
     // jithree는 존재하지 않지만 오류를 나타내지 않는다.
 ~~~
-- [Official Reference](https://cplusplus.com/reference/map/map/operator[]/)
+### 1. 기존 생각
 - 기존에는 원소 추가 방식_1만 이용했다. (set과 혼동하지 않기 위함)
   - 원소 추가 방식_2는 에러가 날 것 이라고 생각했다.
 - 하지만 **operator[]을 사용하는 원소 추가 방식_2 또한 올바르게 동작**한다.
   - 그래도 set과 통일하기 위해 원소 추가 방식_1을 사용하자.
+
+### 2. Official
+- [Official Reference](https://cplusplus.com/reference/map/map/operator[]/)
+- ![20221010_154527](https://user-images.githubusercontent.com/55792986/194810816-7292cf8a-c121-4cf7-a698-8c1f0ac44f30.png)
+  - 원소가 없다면 insert를 한다.
+    - 그러면 당연히 map의 size가 증가한다.
+    - 값도 지정하지 않았다면 default value를 넣는다.
+  - int value의 default = 0
+  - string value의 default = ""
+~~~c++
+    //1. 선언한 map의 크기
+    cout << m.size() << "\n"; // 0
+
+    //2. insert의 크기
+    m.insert({1,1});
+    cout << m.size() << "\n"; // 1
+
+    //3. []으로 선언할 때
+    cout << m[2] << "\n"; // m[2]를 출력시키게 하면 0을 자동으로 넣는다. (int의 default value = 0)
+    cout << m.size() << "\n"; // 2
+
+    m[3] = 1;
+    cout << m.size() << "\n"; // 3
+
+    //4. string의 default value
+    map<int, string> m_string;
+    cout << m_string[1]; 
+    if(m_string[1] == "")
+    {
+        cout << "YES"; //YES를 출력한다. 그러므로 string 의 default value는 ""이다.
+    }
+~~~
