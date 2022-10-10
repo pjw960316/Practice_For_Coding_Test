@@ -5,10 +5,10 @@
     - [2. Associative Container의 Iterator 분석](#2-associative-container의-iterator-분석)
 - [Associative Container의 Erase](#associative-container의-erase)
 - [value가 자료구조라면?](#value가-자료구조라면)
-- [Unordered Map(Hash)의 Find](#unordered-maphash의-find)
+- [:star:Unordered Map(Hash)의 Find](#starunordered-maphash의-find)
     - [1. 복잡도는 상수 시간이다.](#1-복잡도는-상수-시간이다)
     - [2. key로 직접 찾으면 아래의 위험성이 발생하니 find를 사용하자.](#2-key로-직접-찾으면-아래의-위험성이-발생하니-find를-사용하자)
-- ⭐[operator[]로 map에 원소를 추가한다.](#operator로-map에-원소를-추가한다)
+- [:star:operator[]로 map에 원소를 추가한다.](#staroperator로-map에-원소를-추가한다)
     - [1. 기존 생각](#1-기존-생각)
     - [2. Official](#2-official)
 
@@ -245,7 +245,7 @@ int main()
 - 빈 자료구조를 선언한다.
 - 해당 자료구조를 key와 함께 insert 한다.
 
-# Unordered Map(Hash)의 Find
+# :star:Unordered Map(Hash)의 Find
 ### 1. 복잡도는 상수 시간이다.
 - 이전에 공부했지만 모호한 부분이 있어서 정리한다.
 - Find() 함수가 O(1)이고 이전에 작성한 로직
@@ -294,7 +294,7 @@ int main()
   - 그래서 위의 예제를 보면 m["ddd"]를 출력할 때 자동으로 원소를 추가시켜 4개의 원소가 m에 저장된다.
 - 가장 안전한 것은 **find를 사용**하는 것 이라고 생각한다. 
 
-# operator[]로 map에 원소를 추가한다.
+# :star:operator[]로 map에 원소를 추가한다.
 ~~~c++
  map<string,int> m;
     
