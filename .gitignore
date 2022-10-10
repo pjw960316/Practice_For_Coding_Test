@@ -12,3 +12,4 @@ practice.cpp
 .x64
 *.exe
 *.vscode
+settings.json
