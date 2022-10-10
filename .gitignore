@@ -11,3 +11,4 @@ practice.cpp
 .editorconfig
 .x64
 *.exe
+*.vscode
