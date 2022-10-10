@@ -11,5 +11,5 @@ practice.cpp
 .editorconfig
 .x64
 *.exe
-*.vscode
+*.vscode/
 settings.json
