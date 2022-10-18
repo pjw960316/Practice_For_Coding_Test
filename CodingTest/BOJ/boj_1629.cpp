@@ -52,6 +52,15 @@ int main()
 
     for(auto i : m)
     {
+        cout << i.first << " " << i.second << "\n";
+    }
+    if(b==1)
+    {
+        cout << org_a % c;
+        return 0;
+    }
+    for(auto i : m)
+    {
         if(i.second%modulo == b % modulo)
         {
             cout << i.first;

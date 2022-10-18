@@ -29,8 +29,8 @@
 - 문자열의 문자마다 계산하는 알고리즘을 직접 구현하면 된다.
   
 ### 2. 모듈러 연산
-- 수학 파트에서 공부했다.
-- 거길 참고한다.
+- :link:[Link](https://github.com/pjw960316/Unity_Client_Programmer/blob/main/Computer%20Science/Math/Modulo.md)
+
 # Python은 오버플로우가 없다.
 - Python은 기본적으로 오버플로우가 없다.
   - 어떠한 큰 수도 표현이 가능하다.
