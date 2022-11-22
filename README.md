@@ -23,5 +23,5 @@
 
 
 # 5. 개인 필기
-- [자료구조](https://github.com/pjw960316/Unity_Client_Programmer/blob/main/Computer%20Science/Study%20In%20College/Data%20Structure%20(Coding%20Test).pdf)
-- [알고리즘](https://github.com/pjw960316/Unity_Client_Programmer/blob/main/Computer%20Science/Study%20In%20College/Algorithm%20(Coding%20Test).pdf)
+- 과거에는 이 곳에 저장했지만 이제는 옮겼다.
+  - Unity_Client_Programmer로 옮겼다.
